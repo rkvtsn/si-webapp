@@ -1,7 +1,12 @@
-import './App.css'
+import Products from './pages/Products'
+import { TrpcProvider } from './shared/TrpcProvider'
 
 function App() {
-    return <></>
+    return (
+        <TrpcProvider>
+            <Products />
+        </TrpcProvider>
+    )
 }
 
 export default App
