@@ -8,7 +8,8 @@
         "build": "tsc -b && vite build",
         "lint": "eslint .",
         "preview": "vite preview",
-        "prettify": "pnpm exec prettier --write --cache '{src/**/*,*}.{ts,tsx,js,scss}'"
+        "format": "pnpm exec prettier --write --cache '{src/**/*,*}.{ts,tsx,js,scss}'",
+        "typecheck": "tsc --noEmit --project ./tsconfig.json"
     },
     "dependencies": {
         "@si/backend": "workspace:*",
@@ -27,7 +28,6 @@
         "eslint-plugin-react-hooks": "^5.2.0",
         "eslint-plugin-react-refresh": "^0.4.19",
         "globals": "^16.0.0",
-        "typescript": "~5.8.3",
         "typescript-eslint": "^8.30.1",
         "vite": "^6.3.5"
     }
