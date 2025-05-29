@@ -1,10 +1,10 @@
-import Products from './pages/Products'
+import { RouterViews } from './router/RouterViews'
 import { TrpcProvider } from './shared/TrpcProvider'
 
 function App() {
     return (
         <TrpcProvider>
-            <Products />
+            <RouterViews />
         </TrpcProvider>
     )
 }
