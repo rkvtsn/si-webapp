@@ -1,9 +1,11 @@
-import type { ComponentProps } from 'react'
-import type { Route } from 'react-router'
-import type RouterConfig from './config'
+type CreateRouteReturn<TPath> = {
+    path: TPath
+}
 
-export type RouteProps<K> = ComponentProps<typeof Route> & { path: K }
+export type CreateRouteReturnNoParams<TPath> = {
+    getPath: () => string
+} & CreateRouteReturn<TPath>
 
-export type RouterConfigType = typeof RouterConfig
-
-export type RouterPathType = RouterConfigType[number]['path']
+export type CreateRouteReturnWithParams<TParams, TPath> = {
+    getPath: (params: TParams) => string
+} & CreateRouteReturn<TPath>
