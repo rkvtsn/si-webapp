@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"pnpm backend dev\" \"pnpm frontend dev\"",
+    "build": "concurrently \"pnpm backend build\" \"pnpm frontend build\"",
     "backend": "pnpm --filter @si/backend",
     "frontend": "pnpm --filter @si/frontend",
     "typecheck": "concurrently \"pnpm backend typecheck\" \"pnpm frontend typecheck\"",

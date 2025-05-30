@@ -1,7 +1,6 @@
-import { useParams } from 'react-router'
+import type { RouterTypeProps } from '../../router/types'
 
-const Product = () => {
-    const { productId } = useParams<{ productId: string }>()
+const Product = ({ productId }: RouterTypeProps<'product'>) => {
     return <div>Product {productId}</div>
 }
 

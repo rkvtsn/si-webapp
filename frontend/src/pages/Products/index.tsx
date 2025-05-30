@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
-import { ROUTES } from '../../router/routerKeys'
 import { trpc } from '../../shared/TrpcProvider'
+import { router } from '../../router'
 
 const Products = () => {
     const { data: products, isLoading, isFetching, isError, error } = trpc.products.useQuery()
@@ -15,7 +15,7 @@ const Products = () => {
             <h1>Products:</h1>
             {products?.map((product) => (
                 <div key={product.id}>
-                    <Link to={ROUTES.product.getPath({ productId: product.id })}>{product.name}</Link>
+                    <Link to={router.product.getPath({ productId: product.id.toString() })}>{product.name}</Link>
                 </div>
             ))}
         </div>

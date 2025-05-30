@@ -1,15 +1,15 @@
-import type { CreateRouteReturnNoParams, CreateRouteReturnWithParams } from './types'
+import type { CreateRouteReturnNoParams, CreateRouteReturnWithParams } from '../types'
 
 export function createRoute<TString extends string>(path: TString): CreateRouteReturnNoParams<TString>
 
-export function createRoute<TParams extends Record<string, unknown> = never, TString extends string = string>(
+export function createRoute<TParams extends Record<string, string> = never, TString extends string = string>(
     path: TString
 ): CreateRouteReturnWithParams<TParams, TString>
 
-export function createRoute<TParams extends Record<string, unknown> = never, TString extends string = string>(
+export function createRoute<TParams extends Record<string, string> = never, TString extends string = string>(
     path: TString
 ): CreateRouteReturnNoParams<TString> | CreateRouteReturnWithParams<TParams, TString> {
-    const getPathWithParams = (params?: TParams): string => {
+    const getPathWithParams = (params: TParams): string => {
         if (!params) {
             return path
         }

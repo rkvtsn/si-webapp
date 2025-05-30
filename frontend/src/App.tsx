@@ -1,4 +1,4 @@
-import { RouterViews } from './router/RouterViews'
+import { RouterViews } from './router/components/RouterViews'
 import { TrpcProvider } from './shared/TrpcProvider'
 
 function App() {
