@@ -15,7 +15,11 @@ const Products = () => {
             <h1>Products:</h1>
             {products?.map((product) => (
                 <div key={product.id}>
-                    <Link to={router.product.getPath({ productId: product.id.toString() })}>{product.name}</Link>
+                    <Link to={router.product.getPath({ productId: product.id.toString() })}>
+                        <div>
+                            {product.name} - ${product.price}
+                        </div>
+                    </Link>
                 </div>
             ))}
         </div>
